@@ -32,11 +32,12 @@ public class ControladorVotacao {
     }
     
     public void ExibeMenuVotacao() {
-       telaVotacao.BuscaUrna();
+       telaVotacao.MenuVotacao();
     }
     
     public int QuantidadedeVotos(int urna){
         return owner.getCtrlEleitor().QuantidadedeVotos(urna);
+        
     }
 
     public void CadastraVoto(Votacao votando) {
@@ -54,26 +55,25 @@ public class ControladorVotacao {
         candi = BuscaCandidatoPelaUrna(estado);
         int senador = 0;
         int deputado = 0;
-            for (int i = 0 ; i <= candi.size(); i++){
+            for (int i = 0 ; i <= candi.size()-1; i++){
                 Candidato candida = candi.get(i);
                 if(candida.getTipocandidato().equals(SENADOR)){
-                    System.out.println("SENADOR");senador++;
-                    System.out.println(candida);
+                   senador++;
+                    
                 }else if(candida.getTipocandidato().equals(DEPUTADO)){
                     deputado++;
-                    System.out.println("DEPUTADO");
-                }else{System.out.println("EMBRANCO");}
+                    
+                }else{}
             }
-            System.out.println("Não vem pra ca");
             
             if(deputado != 0 && senador != 0){
-                telaVotacao.ExibeVotacaoDois();
+                telaVotacao.ExibeVotacaoDois(urna);
                 
             }else if(deputado !=0 && senador == 0){
-                telaVotacao.ExibeVotacaoDeputado();
+                telaVotacao.ExibeVotacaoDeputado(urna);
             }else{
-                telaVotacao.ExibeVotacaoSenador();
-                System.out.println("Não vem pra ca");
+                telaVotacao.ExibeVotacaoSenador(urna);
+                
             }
     }
     
@@ -81,5 +81,12 @@ public class ControladorVotacao {
         ArrayList<Candidato> candi = new ArrayList<>();
         candi = owner.getCtrlCandidato().BuscaCandidatoPeloEstado(estado);
         return candi;
+    }
+    
+    public void listaVotacao() {
+        for (Votacao vot : votos) {
+            System.out.println(vot);
+
+        }
     }
 }

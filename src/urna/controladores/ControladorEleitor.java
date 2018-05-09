@@ -41,7 +41,7 @@ public class ControladorEleitor {
     }
     int tamanho = 0;
     public int QuantidadedeVotos(int urna){
-        for(int i=0; i <= eleitores.size(); i++){
+        for(int i=0; i <= eleitores.size()-1; i++){
             Eleitor ele = eleitores.get(i);
             if(ele.getUrna() == urna){
             tamanho += 1;

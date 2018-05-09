@@ -26,12 +26,17 @@ public class Main {
         
         Candidato c0 = new Candidato(99, EMBRANCO, "EMBranco", partido, "ZZ");
         Candidato c1 = new Candidato(01, SENADOR, "sena", partido, "ZZ");
-        Candidato c2 = new Candidato(99, SENADOR, "sena", partido, "ZZ");
-        Candidato c3 = new Candidato(99, SENADOR, "depu", partido, "ZZ");
+        Candidato c2 = new Candidato(22, SENADOR, "sena", partido, "ZZ");
+        Candidato c3 = new Candidato(33, SENADOR, "depu", partido, "ZZ");
+        Candidato c4 = new Candidato(45, DEPUTADO, "depu", partido, "ZZ");
         
         Urna u = new Urna(1,1,1, "SEILA", "ZZ");
         
-             
+        Eleitor e0 = new Eleitor(1,"Fernando",1);
+        Eleitor e1 = new Eleitor(1,"Cainã",1);
+        Eleitor e2 = new Eleitor(1,"Lucas",1);
+        Eleitor e3 = new Eleitor(1,"José",1);
+        Eleitor e4 = new Eleitor(1,"Maria",1);
                
         
         ControladorPrincipal ctrl = new ControladorPrincipal();
@@ -41,7 +46,13 @@ public class Main {
         ctrl.getCtrlCandidato().CadastraCandidato(c1);
         ctrl.getCtrlCandidato().CadastraCandidato(c2);
         ctrl.getCtrlCandidato().CadastraCandidato(c3);
+        ctrl.getCtrlCandidato().CadastraCandidato(c4);
         ctrl.getCtrlUrna().CadastraUrna(u);
+        ctrl.getCtrlEleitor().cadastraEleitor(e0);
+        ctrl.getCtrlEleitor().cadastraEleitor(e1);
+        ctrl.getCtrlEleitor().cadastraEleitor(e2);
+        ctrl.getCtrlEleitor().cadastraEleitor(e3);
+        ctrl.getCtrlEleitor().cadastraEleitor(e4);
         
         
         ctrl.ExibeMenuPrincipal();

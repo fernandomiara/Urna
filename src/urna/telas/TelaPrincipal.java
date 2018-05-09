@@ -31,7 +31,7 @@ public class TelaPrincipal {
             do {
 
                 System.out.println("---- Tela Principal ----");
-                System.out.println("1 - Urna \n2 - Candidato\n3 - Partido\n4 - Eleitor\n ---------------------\nEscolha opcao:");
+                System.out.println("1 - Urna \n2 - Candidato\n3 - Partido\n4 - Eleitor\n5 - Votação ---------------------\nEscolha opcao:");
 
                 opcao = teclado.nextInt();
 
@@ -55,6 +55,7 @@ public class TelaPrincipal {
                         
                     case 5:
                         owner.getCtrlVotacao().ExibeMenuVotacao();
+                        break;
                 }
             }
             

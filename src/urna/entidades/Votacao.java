@@ -64,6 +64,9 @@ public class Votacao {
         this.turno = turno;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Candidato:"+ this.candidato+ " /Urna:"+this.urna + " /Turno:"+ this.turno;
+    }
     
 }
