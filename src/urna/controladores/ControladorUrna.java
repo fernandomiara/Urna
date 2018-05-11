@@ -26,7 +26,7 @@ public class ControladorUrna {
     }
     
     public void ExibeMenuUrna() {
-       
+       telaUrna.ExibeTelaUrna();
     }
     
     public void ExibeMenuVotacao(){
@@ -46,7 +46,45 @@ public class ControladorUrna {
         
     }
     public void CadastraUrna(Urna urna){
-        urnas.add(urna);
+        if(validaSessao(urna) == true){
+            urnas.add(urna);
+        }else{
+            
+        }
+        }
+    
+
+    public void ListaUrnas() {
+       for(Urna urn : urnas){
+            System.out.println(urn);
+       }
+    }
+
+    public void ExcluirUrna(int numero) {
+       Urna urna = BuscaUrna(numero); 
+       urnas.remove(urna);
+    }
+
+    public void AlteraUrna(int numero) {
+        for (Urna urn : urnas) {
+            if (urn.getNumero() == numero) {
+                telaUrna.AlteraUrna(urn);
+            }
+        }
+    }
+    public boolean validaSessao(Urna urna) {
+        boolean sessaovalida = true;
+        if (urna != null) {
+            for (Urna u : urnas) {
+                if (u.getNumero()== urna.getNumero() && u.getEstado().equals(urna.getEstado()) && u.getNumeroSessao() == urna.getNumeroSessao() && u.getNumeroZona() == urna.getNumeroZona()) {
+                    telaUrna.ZonaEleitoralJaCadastrada();
+                    sessaovalida = false;
+
+                }
+            }
+        }
+
+        return sessaovalida;
     }
     
 }

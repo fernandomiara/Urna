@@ -46,6 +46,8 @@ public class TelaEleitor {
                 System.out.println("-------- Tela Eleitor --------");
                 System.out.println("1 - Cadastra Eleitor");
                 System.out.println("2 - Lista Eleitor");
+                System.out.println("3 - Altera Eleitor");
+                System.out.println("4 - Excluir Eleitor");
                 System.out.println("0 - Encerra");
                 System.out.println("Escolha a opcao: ");
                 opcao = teclado.nextInt();
@@ -60,7 +62,11 @@ public class TelaEleitor {
                         System.out.println("Lista de Eleitores");
                         owner.listaEleitor();
                         break;
-
+                        
+                    case 3:
+                        System.out.println("Digite o numero do eleitor para alterar:");
+                        int eleitor = teclado.nextInt();
+                        owner.alteraEleitor(eleitor);
                 }
 
             } while (opcao != 0);
@@ -69,6 +75,25 @@ public class TelaEleitor {
             teclado.nextLine();
 
         }
+    }
+
+    public void AlteraEleitor(Eleitor ele) {
+        try {
+
+            System.out.println("Digite o nome do Eleitor:");
+            String nome = teclado.next();
+            ele.setNome(nome);
+            System.out.println("Digite o numero da nova urna de Votação:");
+            int urna = teclado.nextInt();
+            ele.setUrna(urna);           
+            
+
+        } catch (InputMismatchException error) {
+            System.err.println("Não é permitido inserir letras, informe apenas números inteiros!");
+            owner.ExibeMenuEleitor();
+            teclado.nextLine();
+        }
+
     }
 
   

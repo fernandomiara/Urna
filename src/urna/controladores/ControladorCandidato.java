@@ -32,7 +32,9 @@ public class ControladorCandidato {
     }
     
     public void CadastraCandidato(Candidato candidato){
+        if(validaCandidato(candidato) == true){
         candidatos.add(candidato);
+        }
     }
     
     public Candidato BuscaCandidato(int voto) {
@@ -74,6 +76,21 @@ public class ControladorCandidato {
         }
         return retornaCandi;
         
+    }
+     
+     public boolean validaCandidato(Candidato candidato) {
+        boolean candidatovalido = true;
+        if (candidato != null) {
+            for (Candidato c : candidatos) {
+                if (c.getNumeroCandidato()== candidato.getNumeroCandidato()) {
+                    telaCandidato.CandidatoNumeroDuplicado();
+                    candidatovalido = false;
+
+                }
+            }
+        }
+
+        return candidatovalido;
     }
     
 }

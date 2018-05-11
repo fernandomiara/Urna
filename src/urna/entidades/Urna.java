@@ -94,5 +94,10 @@ public class Urna {
         this.estado = estado;
     }
     
+    @Override
+    public String toString(){
+        return "Numero: "+ this.numero + " /Cidade:" + this.cidade +" /Estado:"+  this.estado + " /Sessão:"+  this.numeroSessao + " /Zona: " + this.numeroZona;
+    }
+    
     
 }

@@ -29,7 +29,7 @@ public class ControladorPartido {
     }
     
     public void ExibeMenuPartido() {
-       telaPartido.TelaCadastroPartido();
+       telaPartido.ExibeMenuPartido();
     }
 
     public void CadastraPartido(Partidos parti) {

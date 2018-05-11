@@ -22,7 +22,7 @@ public class TelaPartido {
         teclado = new Scanner(System.in);
         this.owner = owner;
     }
-    public void TelaCadastroPartido(){
+    public void ExibeMenuPartido(){
          int opcao = 0;
 
         try {

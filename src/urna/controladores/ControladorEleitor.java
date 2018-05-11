@@ -5,6 +5,7 @@
  */
 package urna.controladores;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import urna.entidades.Eleitor;
 import urna.telas.TelaEleitor;
@@ -52,5 +53,26 @@ public class ControladorEleitor {
         }
         return tamanho;
     }
+    public Eleitor BuscaEleitor(int ele){
+        for (int u = 0; u < eleitores.size(); u++) {
+            Eleitor elei = eleitores.get(u);
+            if (elei.getNumero()== ele) {
+                return elei;
 
+            }
+          
+        }
+        return null;
+        
+    }
+    public void alteraEleitor(int eleitor) {
+        for (Eleitor ele : eleitores) {
+            if (ele.getNumero() == eleitor) {
+                telaEleitor.AlteraEleitor(ele);
+            }
+        }
+    }
+
+    
+    
 }

@@ -108,6 +108,10 @@ public class TelaCandidato {
        owner.BuscaPartido(candidato, numero, nome, numeropartido, estado);
     }
 
+    public void CandidatoNumeroDuplicado() {
+        System.out.println("Numero de Candidato ja cadastrado!");
+    }
+
     
     }
 

@@ -22,7 +22,7 @@ public class Main {
      */
     public static void main(String[] args) throws ParseException {
         // TODO code application logic here
-        Partidos partido = new Partidos(0, "SEM PARTIDO");
+        Partidos partido = new Partidos(0, "KXA2");
         
         Candidato c0 = new Candidato(99, EMBRANCO, "EMBranco", partido, "ZZ");
         Candidato c1 = new Candidato(01, SENADOR, "sena", partido, "ZZ");
@@ -33,10 +33,10 @@ public class Main {
         Urna u = new Urna(1,1,1, "SEILA", "ZZ");
         
         Eleitor e0 = new Eleitor(1,"Fernando",1);
-        Eleitor e1 = new Eleitor(1,"Cainã",1);
-        Eleitor e2 = new Eleitor(1,"Lucas",1);
-        Eleitor e3 = new Eleitor(1,"José",1);
-        Eleitor e4 = new Eleitor(1,"Maria",1);
+        Eleitor e1 = new Eleitor(2,"Cainã",1);
+        Eleitor e2 = new Eleitor(3,"Lucas",1);
+        Eleitor e3 = new Eleitor(4,"José",1);
+        Eleitor e4 = new Eleitor(5,"Maria",1);
                
         
         ControladorPrincipal ctrl = new ControladorPrincipal();
